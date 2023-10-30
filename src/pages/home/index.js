@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Movie, MovieList, Btn } from "./style";
 import { Link } from "react-router-dom";
 import SearchBar from "./pesquisa";
+import MovieCard from "./Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -35,20 +36,11 @@ function Home() {
     
     return (
         <Container>
-            <h1>Movies</h1>
-            <SearchBar onSearch={handleSearch} />
-            <MovieList>
+            <h1>Filmes em alta</h1>
+            <SearchBar onSearch={handleSearch}/>
+            <MovieList className="row">
                 {moviesRender.map((movie) => (
-                    <Movie key={movie.id}>
-                        <img
-                            src={`${imagePath}${movie.poster_path}`}
-                            alt={movie.title}
-                        />
-                        <span>{movie.title}</span>
-                        <Link to={`/${movie.id}`}>
-                            <Btn>Detalhes</Btn>
-                        </Link>
-                    </Movie>
+                    <MovieCard key={movie.id} movie={movie} imagePath={imagePath} />
                 ))}
             </MovieList>
         </Container>
