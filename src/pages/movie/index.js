@@ -17,12 +17,12 @@ const Movie = () => {
             .then((data) => {
                 const res = data.results;
                 let filme = res.find((key) => {
-                    // eslint-disable-next-line
-                    return key.id == id;
+                   
+                    return key.id === id;
                 });
                 setMovie(filme);
-            }); // eslint-disable-next-line
-    }, []);
+            }); 
+    }, [KEY, id]);
 
     return (
         <div>
