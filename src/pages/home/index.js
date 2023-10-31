@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Movie, MovieList, Btn } from "./style";
-import { Link } from "react-router-dom";
+import { Container, MovieList } from "./style";
 import SearchBar from "./pesquisa";
 import MovieCard from "./Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +9,7 @@ import logo from "../../img/Logo.jpeg";
 function Home() {
     const imagePath = "https://image.tmdb.org/t/p/w500";
     const [searchResults, setSearchResults] = useState([]);
-    const [query, setQuery] = useState("");
+    const [setQuery] = useState("");
     const [movies, setMovies] = useState([]);
     const KEY = process.env.REACT_APP_KEY;
 
