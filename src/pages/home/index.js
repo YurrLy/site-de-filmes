@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./pesquisa";
 import MovieCard from "./Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from "../../img/Logo.jpeg";
 
 
 function Home() {
@@ -36,9 +37,13 @@ function Home() {
     
     return (
         <Container>
-            <h1>Filmes em alta</h1>
+            <div className="d-flex justify-content-center align-items-center gap-5 mb-5">
+                <img src={logo} alt="Logo" width="100" height="100" />
+               <h1>Filmes em alta</h1> 
+            </div>
+            
             <SearchBar onSearch={handleSearch}/>
-            <MovieList className="row">
+            <MovieList className="row m-5">
                 {moviesRender.map((movie) => (
                     <MovieCard key={movie.id} movie={movie} imagePath={imagePath} />
                 ))}

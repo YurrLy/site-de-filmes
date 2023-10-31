@@ -33,9 +33,7 @@ const Movie = () => {
 
     return (
         <div>
-            <nav>
-                <h1>Movie</h1>
-            </nav>
+          
             <div className="container mt-4">
                 <div className="card">
                     <div className="row g-0">
@@ -53,7 +51,8 @@ const Movie = () => {
                                 <p className="card-text">
                                     Data de lançamento: {movie.release_date}
                                 </p>
-                                {trailerLink && (
+                                <div className="d-flex mt-5 gap-5 justify-content-center align-items-center">
+                                     {trailerLink && (
                                     <a href={trailerLink} target="_blank" rel="noopener noreferrer">
                                         <button className="btn btn-primary">
                                             Trailer
@@ -65,6 +64,8 @@ const Movie = () => {
                                         Voltar
                                     </button>
                                 </Link>
+                                </div>
+                               
                             </div>
                         </div>
                     </div>
